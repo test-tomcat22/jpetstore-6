@@ -11,12 +11,12 @@
   num1= generator.nextInt(5)+3;          
 		
 	try{
-	String url = "jdbc:mysql://10.50.50.203:3306/jdbcTest";
-	String id = "testid";                              
-	String pw = "testpw";                             
+	String url = "jdbc:mysql://10.50.50.203:3306/accordion";
+	String id = "accordion";                              
+	String pw = "accordion";                             
 	Class.forName("com.mysql.jdbc.Driver"); 
 	conn=DriverManager.getConnection(url,id,pw);
-	String sql = "select 'test' where sleep(?)=0";
+	String sql = "select 'test',sleep(?)=0";
 	pstmt = conn.prepareStatement(sql); 
 	pstmt.setInt(1,num1);
 	pstmt.executeQuery();
