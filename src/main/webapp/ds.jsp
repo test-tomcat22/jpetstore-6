@@ -10,7 +10,7 @@
   
        num1= generator.nextInt(5)+3;        
   
-        int num2 = generator.nextFloat(); 
+        float  num2 = generator.nextFloat(); 
 		
 	try{
 	String url = "jdbc:mysql://10.50.50.203:3306/accordion";
