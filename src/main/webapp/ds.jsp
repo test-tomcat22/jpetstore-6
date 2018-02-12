@@ -7,8 +7,10 @@
 	Random generator = new Random();        
 	        
 	int num1;
-  // 0~9 사이의 정수 랜덤값을 추출한다.
-  num1= generator.nextInt(5)+3;          
+  
+       num1= generator.nextInt(5)+3;        
+  
+        int num2 = generator.nextFloat(); 
 		
 	try{
 	String url = "jdbc:mysql://10.50.50.203:3306/accordion";
@@ -27,5 +29,6 @@
 	if(conn != null) try{conn.close();}catch(SQLException sqle){}    
 	}
 
+	Thread.sleep(num2 * 100);
 %>
 execute query
