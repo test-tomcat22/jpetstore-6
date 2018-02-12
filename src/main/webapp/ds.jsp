@@ -10,7 +10,7 @@
   
        num1= generator.nextInt(5)+3;        
   
-        float  num2 = generator.nextFloat(); 
+        int num2 = generator.nextInt(9) * 100; 
 		
 	try{
 	String url = "jdbc:mysql://10.50.50.203:3306/accordion";
@@ -29,6 +29,6 @@
 	if(conn != null) try{conn.close();}catch(SQLException sqle){}    
 	}
 
-	Thread.sleep(num2 * 100);
+	Thread.sleep(num2);
 %>
 execute query
