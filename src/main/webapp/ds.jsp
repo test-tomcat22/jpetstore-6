@@ -14,8 +14,8 @@
 		
 	try{
 	String url = "jdbc:mysql://wordpress-mysql.oss:3306/accordion";
-	String id = "accordion";                              
-	String pw = "accordion";                             
+	String id = "wordpress";                              
+	String pw = "wordpress";                             
 	Class.forName("com.mysql.jdbc.Driver"); 
 	conn=DriverManager.getConnection(url,id,pw);
 	String sql = "select 'test',sleep(?)=0";
