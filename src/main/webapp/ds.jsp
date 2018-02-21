@@ -22,6 +22,11 @@
 	pstmt = conn.prepareStatement(sql); 
 	pstmt.setInt(1,num1);
 	pstmt.executeQuery();
+
+	sql = "select 'test2'";
+	pstmt = conn.prepareStatement(sql); 
+	pstmt.executeQuery();
+
 	}catch(Exception e){   
 	e.printStackTrace();
 	}finally{        
