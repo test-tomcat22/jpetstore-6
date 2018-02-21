@@ -13,7 +13,7 @@
         int num2 = generator.nextInt(9) * 100; 
 		
 	try{
-	String url = "jdbc:mysql://10.50.50.203:3306/accordion";
+	String url = "jdbc:mysql://oss.wordpress-mysql:3306/accordion";
 	String id = "accordion";                              
 	String pw = "accordion";                             
 	Class.forName("com.mysql.jdbc.Driver"); 
