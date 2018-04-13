@@ -14,7 +14,7 @@
 		
 	try{
 	String url = "jdbc:mysql://mysql.oss:3306/wordpress";
-	String id = "root";                              
+	String id = "wordpress";                              
 	String pw = "wordpress";                             
 	Class.forName("com.mysql.jdbc.Driver"); 
 	conn=DriverManager.getConnection(url,id,pw);
