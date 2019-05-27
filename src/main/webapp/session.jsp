@@ -46,12 +46,6 @@
                         <td width="25%">request parameter</td><td width="75%"><%=request.getParameter("id")%></td>
                 </tr>
                 <tr>
-                        <td width="25%">request parameter url encoder</td><td width="75%"><%=encode%></td>
-                </tr>
-                <tr>
-                        <td width="25%">request parameter url deoder</td><td width="75%"><%=decode%></td>
-                </tr>
-                <tr>
                         <td width="25%">Session ID</td><td width="75%"><%=sessionId%></td>
                 </tr>
                 <tr>
