@@ -43,9 +43,6 @@
                         <td width="25%">Agent</td><td width="75%"><%=browser%></td>
                 </tr>
                 <tr>
-                        <td width="25%">request parameter</td><td width="75%"><%=request.getParameter("id")%></td>
-                </tr>
-                <tr>
                         <td width="25%">Session ID</td><td width="75%"><%=sessionId%></td>
                 </tr>
                 <tr>
