@@ -350,8 +350,10 @@
       </activation>
       <properties>
       <!-- Optional URL to server. Default value is http://localhost:9000 -->
-      <sonar.host.url>http://10.20.200.101:9000</sonar.host.url>
-      <sonar.projectName>jpetStore6-KT-POC</sonar.projectName>             
+        <sonar.host.url>http://10.20.200.101:9000</sonar.host.url>
+        <sonar.projectName>mantech-accordion/jpetstore-6</sonar.projectName>
+      <!-- projectKey default <groupId>:<artifactId> -> ex : org.mybatis:jpetstore-->
+        <sonar.projectKey>jpetstore:mantech-accordion</sonar.projectKey>             
       </properties>
     </profile>	           
     <!-- Profiles for JDK version -->
