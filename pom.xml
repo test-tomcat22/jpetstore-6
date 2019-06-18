@@ -158,6 +158,12 @@
       <version>2.27</version>
       <scope>test</scope>
     </dependency>
+    <!-- sonar -->
+    <dependency>
+      <groupId>org.sonarsource.scanner.maven</groupId>
+      <artifactId>sonar-maven-plugin</artifactId>
+      <version>3.6.0.1398</version>
+    </dependency>         
   </dependencies>
 
   <build>
@@ -336,6 +342,19 @@
         <cargo.maven.containerUrl>http://www.caucho.com/download/resin-${resin.version}.zip</cargo.maven.containerUrl>
       </properties>
     </profile>
+    <!-- sonar -->
+    <profile>
+      <id>sonar</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+      <!-- Optional URL to server. Default value is http://localhost:9000 -->
+      <sonar.host.url>
+      http://10.20.200.101:9000
+      </sonar.host.url>
+      </properties>
+    </profile>	           
     <!-- Profiles for JDK version -->
     <profile>
       <id>jdk7</id>
