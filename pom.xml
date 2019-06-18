@@ -350,9 +350,8 @@
       </activation>
       <properties>
       <!-- Optional URL to server. Default value is http://localhost:9000 -->
-      <sonar.host.url>
-      http://10.20.200.101:9000
-      </sonar.host.url>
+      <sonar.host.url>http://10.20.200.101:9000</sonar.host.url>
+      <sonar.projectName>jpetStore6-POC</sonar.projectName>             
       </properties>
     </profile>	           
     <!-- Profiles for JDK version -->
