@@ -12,8 +12,10 @@
 </head>
 
 <body>
-en : Accordion
-ko : 아코디언
+<ul>
+    <li>en : Accordion</li>
+    <li>ko : 아코디언</li>
+</ul>
 </body>
 
 </html>
