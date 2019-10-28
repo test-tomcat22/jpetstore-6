@@ -1,7 +1,7 @@
 <%@ page contentType = "text/html; charset=euc-kr" %>
 <%@ page import = "java.util.Enumeration" %>
 <html>
-<head><title>헤더 목록 출력</title></head>
+<head><title>Print Header</title></head>
 <body>
 <%
     Enumeration headerEnum = request.getHeaderNames();
