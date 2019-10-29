@@ -1,4 +1,5 @@
 <%@ page contentType = "text/html; charset=euc-kr" %>
+<%@ page import = "java.util.Enumeration" %>
 <html>
 <head><title>HTTPS Redirect</title></head>
 <body>
