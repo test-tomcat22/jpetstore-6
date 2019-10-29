@@ -24,12 +24,19 @@ while(headerEnum.hasMoreElements()) {
    System.out.println( headerName + " :: " + headerValue );
 }
 
+if(uri.indexOf("http://") > -1 ) {	
+	String after = uri.replaceAll("http://","https://");
+<!--
 if(url.indexOf("http://") > -1 ) {	
-        String after = url.replaceAll("http://","https://") +"?"+ request.getQueryString();
-	System.out.println("FFFFFF" + after);
+	String after = url.replaceAll("http://","https://") +"?"+ request.getQueryString();
+-->
+	System.out.println("######REDIRECT" + after);
 	System.out.println("######################END############################");
 
+<!--
 	response.sendRedirect(url.replaceAll("http://","https://") +"?"+ request.getQueryString());		
+-->
+	response.sendRedirect(uri.replaceAll("http://","https://"));		
 
 	return;
 
