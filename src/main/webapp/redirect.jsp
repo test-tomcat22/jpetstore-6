@@ -8,8 +8,8 @@ System.out.println("######################START##########################");
 String url = javax.servlet.http.HttpUtils.getRequestURL(request).toString();
 String uri = request.getHeader("x-forwarded-proto") + "://" +   // "http" + "://
              request.getServerName() +       // "myhost"
-             ":" +                           // ":"
-             request.getServerPort() +       // "8080"
+//             ":" +                           // ":"
+//             request.getServerPort() +       // "8080"
              request.getRequestURI() +       // "/people"
              "?" +                           // "?"
              request.getQueryString();       // "lastname=Fox&age=30"
