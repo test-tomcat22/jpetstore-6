@@ -26,16 +26,16 @@ while(headerEnum.hasMoreElements()) {
 
 if(uri.indexOf("http://") > -1 ) {	
 	String after = uri.replaceAll("http://","https://");
-<!--
-if(url.indexOf("http://") > -1 ) {	
-	String after = url.replaceAll("http://","https://") +"?"+ request.getQueryString();
--->
+
+//if(url.indexOf("http://") > -1 ) {	
+//	String after = url.replaceAll("http://","https://") +"?"+ request.getQueryString();
+
 	System.out.println("######REDIRECT" + after);
 	System.out.println("######################END############################");
 
-<!--
-	response.sendRedirect(url.replaceAll("http://","https://") +"?"+ request.getQueryString());		
--->
+
+//	response.sendRedirect(url.replaceAll("http://","https://") +"?"+ request.getQueryString());		
+
 	response.sendRedirect(uri.replaceAll("http://","https://"));		
 
 	return;
