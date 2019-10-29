@@ -6,7 +6,7 @@
 <%
 System.out.println("######################START##########################");
 String url = javax.servlet.http.HttpUtils.getRequestURL(request).toString();
-String uri = request.getScheme() + "://" +   // "http" + "://
+String uri = request.getHeader("x-forwarded-proto") + "://" +   // "http" + "://
              request.getServerName() +       // "myhost"
              ":" +                           // ":"
              request.getServerPort() +       // "8080"
