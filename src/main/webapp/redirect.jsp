@@ -6,10 +6,16 @@
 <%
 System.out.println("######################START##########################");
 String url = javax.servlet.http.HttpUtils.getRequestURL(request).toString();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+String uri = request.getScheme() + "://" +   // "http" + "://
+             request.getServerName() +       // "myhost"
+             ":" +                           // ":"
+             request.getServerPort() +       // "8080"
+             request.getRequestURI() +       // "/people"
+             "?" +                           // "?"
+             request.getQueryString();       // "lastname=Fox&age=30"
 
-System.out.println("BBBBBB" + url);
-System.out.println("######BASEPATH" + basePath);
+System.out.println("######URL" + url);
+System.out.println("######URI" + uri);
 
 Enumeration headerEnum = request.getHeaderNames();
 while(headerEnum.hasMoreElements()) {
