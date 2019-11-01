@@ -8,8 +8,8 @@ System.out.println("######################START##########################");
 String url = javax.servlet.http.HttpUtils.getRequestURL(request).toString();
 String uri = request.getHeader("x-forwarded-proto") + "://" +   // "http" + "://
              request.getServerName() +       // "myhost"
-//             ":" +                           // ":"
-//             request.getServerPort() +       // "8080"
+             ":" +                           // ":"
+             request.getServerPort() +       // "8080"
              request.getRequestURI() +       // "/people"
              "?" +                           // "?"
              request.getQueryString();       // "lastname=Fox&age=30"
@@ -41,7 +41,13 @@ if(uri.indexOf("http://") > -1 ) {
 	System.out.println("######REDIRECT2" + response.getHeader("x-forwarded-by"));
 	System.out.println("######REDIRECT2" + response.getHeader("x-forwarded-proto"));
 	
-	response.sendRedirect(uri.replaceAll("http://","https://"));		
+	String reuri = "https://" +   // "http" + "://
+             request.getServerName() +       // "myhost"
+             ":32533" +                           // ":"
+             request.getRequestURI() +       // "/people"
+             "?" +                           // "?"
+             request.getQueryString();       // "lastname=Fox&age=30"
+	response.sendRedirect(reuri);		
 
 	return;
 
