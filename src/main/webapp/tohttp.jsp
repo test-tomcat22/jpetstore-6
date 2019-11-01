@@ -24,8 +24,7 @@ while(headerEnum.hasMoreElements()) {
 }
 
 if(uri.indexOf("https://") > -1 ) {	
-//	String after = uri.replaceAll("https://","http://");
-	System.out.println("######REDIRECT" + after);
+	System.out.println("######REDIRECT:: http");
 	System.out.println("######################END############################");
   
   response.setHeader("x-forwarded-proto", "http");
