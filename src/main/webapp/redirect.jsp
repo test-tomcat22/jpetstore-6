@@ -16,7 +16,7 @@ String uri = request.getHeader("x-forwarded-proto") + "://" +   // "http" + "://
 
 System.out.println("######URL" + url);
 System.out.println("######URI" + uri);
-
+System.out.println("######REQUEST HEADER######");
 Enumeration headerEnum = request.getHeaderNames();
 while(headerEnum.hasMoreElements()) {
    String headerName = (String)headerEnum.nextElement();
@@ -35,7 +35,11 @@ if(uri.indexOf("http://") > -1 ) {
 
 
 //	response.sendRedirect(url.replaceAll("http://","https://") +"?"+ request.getQueryString());		
-
+        System.out.println("######REQUEST HEADER######");
+	response.getHeader("x-forwarded-for");
+	response.getHeader("x-forwarded-by");
+	response.getHeader("x-forwarded-proto");
+	
 	response.sendRedirect(uri.replaceAll("http://","https://"));		
 
 	return;
