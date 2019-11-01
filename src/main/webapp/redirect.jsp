@@ -35,7 +35,8 @@ if(uri.indexOf("http://") > -1 ) {
 
 
 //	response.sendRedirect(url.replaceAll("http://","https://") +"?"+ request.getQueryString());		
-        System.out.println("######REQUEST HEADER######");
+        response.setHeader("x-forwarded-proto", "https");
+	System.out.println("######REQUEST HEADER######");
 	System.out.println("######REDIRECT1" + response.getHeader("x-forwarded-for"));
 	System.out.println("######REDIRECT2" + response.getHeader("x-forwarded-by"));
 	System.out.println("######REDIRECT2" + response.getHeader("x-forwarded-proto"));
