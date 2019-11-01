@@ -13,6 +13,7 @@ String uri = request.getHeader("x-forwarded-proto") + "://" +   // "http" + "://
              request.getRequestURI() +       // "/people"
              "?" +                           // "?"
              request.getQueryString();       // "lastname=Fox&age=30"
+
 System.out.println("######URL" + url);
 System.out.println("######URI" + uri);
 System.out.println("######REQUEST HEADER######");
@@ -23,16 +24,15 @@ while(headerEnum.hasMoreElements()) {
    System.out.println( headerName + " :: " + headerValue );
 }
 
+  request.setHeader("x-forwarded-proto", "http");
+  System.out.println("######REQUEST HEADER######");
+  System.out.println("######REDIRECT" + request.getHeader("x-forwarded-proto"));
+
+
 if(uri.indexOf("https://") > -1 ) {	
 	System.out.println("######REDIRECT:: http");
-	System.out.println("######################END############################");
-  
-  response.setHeader("x-forwarded-proto", "http");
-	System.out.println("######REQUEST HEADER######");
-	System.out.println("######REDIRECT1" + response.getHeader("x-forwarded-for"));
-	System.out.println("######REDIRECT2" + response.getHeader("x-forwarded-by"));
-	System.out.println("######REDIRECT2" + response.getHeader("x-forwarded-proto"));
-	
+	System.out.println("######################END############################");  
+
 	String reuri = "http://" +  
              request.getServerName() +       // "myhost"
              ":32608" +                           // ":"
