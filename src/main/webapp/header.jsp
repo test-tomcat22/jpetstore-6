@@ -8,6 +8,8 @@
     while(headerEnum.hasMoreElements()) {
         String headerName = (String)headerEnum.nextElement();
         String headerValue = request.getHeader(headerName);
+        System.out.println( headerName + " :: " + headerValue );
+                
 %>
 <%= headerName %> = <%= headerValue %> <br>
 <%
