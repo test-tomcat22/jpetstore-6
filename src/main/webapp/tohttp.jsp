@@ -24,25 +24,34 @@ while(headerEnum.hasMoreElements()) {
    System.out.println( headerName + " :: " + headerValue );
 }
 
-  request.setHeader("x-forwarded-proto", "http");
-  System.out.println("######REQUEST HEADER######");
-  System.out.println("######REDIRECT" + request.getHeader("x-forwarded-proto"));
-
-
 if(uri.indexOf("https://") > -1 ) {	
-	System.out.println("######REDIRECT:: http");
-	System.out.println("######################END############################");  
+	String after = uri.replaceAll("http://","https://");
 
-	String reuri = "http://" +  
+//if(url.indexOf("http://") > -1 ) {	
+//	String after = url.replaceAll("http://","https://") +"?"+ request.getQueryString();
+
+	System.out.println("######REDIRECT" + after);
+	System.out.println("######################END############################");
+
+
+//	response.sendRedirect(url.replaceAll("http://","https://") +"?"+ request.getQueryString());		
+ 	System.out.println("######REQUEST HEADER######");
+	System.out.println("######REDIRECT1" + response.getHeader("x-forwarded-for"));
+	System.out.println("######REDIRECT2" + response.getHeader("x-forwarded-by"));
+	System.out.println("######REDIRECT2" + response.getHeader("x-forwarded-proto"));
+	
+	String reuri = "http://" +   // "http" + "://
              request.getServerName() +       // "myhost"
              ":32608" +                           // ":"
              request.getRequestURI() +       // "/people"
              "?" +                           // "?"
              request.getQueryString();       // "lastname=Fox&age=30"
 	response.sendRedirect(reuri);		
+
 	return;
+
 }
 %>
-	<h1>HTTPS Redirect</h1>
+	<h1>HTTP Redirect</h1>
 </body>
 </html>
