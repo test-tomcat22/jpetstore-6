@@ -24,6 +24,8 @@ while(headerEnum.hasMoreElements()) {
    String headerValue = request.getHeader(headerName);
    System.out.println( headerName + " :: " + headerValue );
 }
+String reqServerPort = ":" + req.getServerPort();
+if (reqServerPort.equals(":80") || reqServerPort.equals(":443")) reqServerPort = "";
 
 if(uri.indexOf("https://") > -1 ) {	
 	String after = uri.replaceAll("http://","https://");
@@ -40,13 +42,16 @@ if(uri.indexOf("https://") > -1 ) {
 	System.out.println("######REDIRECT1" + response.getHeader("x-forwarded-for"));
 	System.out.println("######REDIRECT2" + response.getHeader("x-forwarded-by"));
 	System.out.println("######REDIRECT2" + response.getHeader("x-forwarded-proto"));
+	System.out.println("######REDIRECT3" + response.getHeader("x-forwarded-port"));
 	
 	String reuri = "http://" +   // "http" + "://
              request.getServerName() +       // "myhost"
             // ":32608" +                           // ":"
+             reqServerPort +      	    
              request.getRequestURI() +       // "/people"
              "?" +                           // "?"
              request.getQueryString();       // "lastname=Fox&age=30"
+	System.out.println("######REDIRECTURL" + reuri);
 	response.sendRedirect(reuri);		
 
 	return;
