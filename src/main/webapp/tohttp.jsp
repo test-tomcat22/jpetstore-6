@@ -1,5 +1,6 @@
 <%@ page contentType = "text/html; charset=euc-kr" %>
 <%@ page import = "java.util.Enumeration" %>
+<%@ page import = "javax.servlet.http.HttpServletRequest" %>
 <html>
 <meta name="referrer" content="always" />
 <head><title>HTTPS Redirect</title></head>
@@ -24,6 +25,7 @@ while(headerEnum.hasMoreElements()) {
    String headerValue = request.getHeader(headerName);
    System.out.println( headerName + " :: " + headerValue );
 }
+HttpServletRequest req 	= (HttpServletRequest)request;
 String reqServerPort = ":" + req.getServerPort();
 if (reqServerPort.equals(":80") || reqServerPort.equals(":443")) reqServerPort = "";
 
