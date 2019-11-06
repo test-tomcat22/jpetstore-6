@@ -2,7 +2,7 @@
 <%@ page import = "java.util.Enumeration" %>
 <%@ page import = "javax.servlet.http.HttpServletRequest" %>
 <html>
-<meta name="referrer" content="always" />
+<meta name="referrer" content="origin">
 <head><title>HTTPS Redirect</title></head>
 <body>
 <%
@@ -27,7 +27,7 @@ while(headerEnum.hasMoreElements()) {
 }
 HttpServletRequest req 	= (HttpServletRequest)request;
 String reqServerPort = ":" + req.getServerPort();
-if (reqServerPort.equals(":80") || reqServerPort.equals(":443")) reqServerPort = "";
+//if (reqServerPort.equals(":80") || reqServerPort.equals(":443")) reqServerPort = "";
 
 if(uri.indexOf("https://") > -1 ) {	
 	String after = uri.replaceAll("http://","https://");
@@ -36,7 +36,6 @@ if(uri.indexOf("https://") > -1 ) {
 //	String after = url.replaceAll("http://","https://") +"?"+ request.getQueryString();
 
 	System.out.println("######REDIRECT" + after);
-	System.out.println("######################END############################");
 
 
 //	response.sendRedirect(url.replaceAll("http://","https://") +"?"+ request.getQueryString());		
@@ -49,11 +48,12 @@ if(uri.indexOf("https://") > -1 ) {
 	String reuri = "http://" +   // "http" + "://
              request.getServerName() +       // "myhost"
             // ":32608" +                           // ":"
-             reqServerPort +      	    
+             //reqServerPort +      	    
              request.getRequestURI() +       // "/people"
              "?" +                           // "?"
              request.getQueryString();       // "lastname=Fox&age=30"
 	System.out.println("######REDIRECTURL" + reuri);
+	System.out.println("######################END############################");
 	response.sendRedirect(reuri);		
 
 	return;
