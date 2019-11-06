@@ -43,10 +43,13 @@ if(uri.indexOf("http://") > -1 ) {
 	
 	String reuri = "https://" +   // "http" + "://
              request.getServerName() +       // "myhost"
-             ":32533" +                           // ":"
+             //":32533" +                           // ":"
              request.getRequestURI() +       // "/people"
              "?" +                           // "?"
              request.getQueryString();       // "lastname=Fox&age=30"
+	System.out.println("######REDIRECT" + reuri);
+	System.out.println("######################END############################");
+
 	response.sendRedirect(reuri);		
 
 	return;
