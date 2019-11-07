@@ -54,13 +54,13 @@ if(uri.indexOf("https://") > -1 ) {
              request.getQueryString();       // "lastname=Fox&age=30"
 	System.out.println("######REDIRECTURL" + reuri);
 	System.out.println("######################END############################");
-	//response.sendRedirect(reuri);		
+	response.sendRedirect(reuri);		
 
 	return;
 
 }
 %>
 	<h1>HTTP Redirect</h1>
-	<script>window.location='http://test.oilbankcard.com/tohttp.jsp';</script>
+
 </body>
 </html>
