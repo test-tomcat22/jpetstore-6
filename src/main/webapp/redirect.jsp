@@ -43,7 +43,7 @@ if(uri.indexOf("http://") > -1 ) {
 	
 	String reuri = "https://" +   // "http" + "://
              request.getServerName() +       // "myhost"
-             //":32533" +                           // ":"
+             ":30170" +                           // ":"
              request.getRequestURI() +       // "/people"
              "?" +                           // "?"
              request.getQueryString();       // "lastname=Fox&age=30"
