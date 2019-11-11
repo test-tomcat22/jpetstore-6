@@ -47,7 +47,7 @@ if(uri.indexOf("https://") > -1 ) {
 	
 	String reuri = "http://" +   // "http" + "://
              request.getServerName() +       // "myhost"
-            // ":32608" +                           // ":"
+             ":32208" +                           // ":"
              //reqServerPort +      	    
              request.getRequestURI() +       // "/people"
              "?" +                           // "?"
