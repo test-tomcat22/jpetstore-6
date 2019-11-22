@@ -18,6 +18,7 @@ String uri = request.getHeader("x-forwarded-proto") + "://" +   // "http" + "://
 
 System.out.println("######URL" + url);
 System.out.println("######URI" + uri);
+System.out.println("######org ip######" + request.getHeader("x-original-forwarded-for"));
 System.out.println("######REQUEST HEADER######");
 Enumeration headerEnum = request.getHeaderNames();
 while(headerEnum.hasMoreElements()) {
