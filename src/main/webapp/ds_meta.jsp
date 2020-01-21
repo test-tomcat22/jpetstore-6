@@ -9,9 +9,11 @@
    Connection con = null;
    PreparedStatement ps = null;
    ResultSet rs = null;
-   String sql = "select * from inventory";
-   String sleep = (request.getParameter("sleep") == null || "".equals(request.getParameter("sleep")) ) ? "5" : request.getParameter("sleep");
-   int sleepTime = Integer.parseInt(sleep);
+   //String sql = "select * from inventory";
+   //mysql
+   String sql = "select now()";
+   //String sleep = (request.getParameter("sleep") == null || "".equals(request.getParameter("sleep")) ) ? "5" : request.getParameter("sleep");
+   //int sleepTime = Integer.parseInt(sleep);
    
   try {
     ctx = new InitialContext();
@@ -45,6 +47,6 @@
      if ( ps != null ) try { ps.close(); } catch(Exception e) {}
      if ( con != null ) try { con.close(); } catch(Exception e) {} 
    }
-   Thread.sleep(1000*sleepTime);
+   //Thread.sleep(1000*sleepTime);
 %>
     Query Execution
