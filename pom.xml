@@ -54,6 +54,7 @@
       <name>Mybatis GitHub Pages</name>
       <url>git:ssh://git@github.com/mybatis/jpetstore-6.git?gh-pages#</url>
     </site>
+	  <!--
     <snapshotRepository>
       <id>nexus-snapshots</id>
       <name>nexus-snapshots</name>
@@ -64,6 +65,7 @@
       <name>nexus-releases</name>
       <url>http://10.20.200.60:32247/repository/maven-releases/</url>
     </repository>         
+	  -->
   </distributionManagement>
 
   <dependencies>
@@ -410,6 +412,7 @@
       </build>
     </profile>
   </profiles>
+	<!--
   <repositories>
     <repository>
       <id>maven-group</id>
@@ -419,4 +422,5 @@
 	</releases>           
     </repository>
   </repositories>
+-->
 </project>
