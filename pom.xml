@@ -419,5 +419,13 @@
        	<enabled>true</enabled>
 	</releases>           
     </repository>
+
+    <repository>
+      <id>maven-central</id>
+      <url>http://10.20.200.111:30565/repository/maven-central/</url>
+	<releases>
+       	<enabled>true</enabled>
+	</releases>           
+    </repository>
   </repositories>
 </project>
