@@ -24,7 +24,7 @@
 <FORM NAME="testCP" ACTION="testds.jsp" METHOD="POST" style="background-color:#E6E6FA">
 <TABLE WIDTH="50%" ALIGN="left" BGCOLOR="#01A982">
         <TR><TD ALIGN="left" WIDTH="30%">Data Source Name</TD>
-                <TD WIDTH="70%"><INPUT TYPE="text" NAME="txtDataSource" VALUE="jdbc/testDS" class="acc1"></TD>
+                <TD WIDTH="70%"><INPUT TYPE="text" NAME="txtDataSource" VALUE='<%= ( request.getParameter("txtDataSource") == null ) ? "jdbc/testDS" : request.getParameter("txtDataSource") %>' class="acc1"></TD>
         </TR>
         <TR><TD ALIGN="left" WIDTH="30%">Table Name</TD>
                 <TD WIDTH="70%"><INPUT TYPE="text" NAME="txtTableName" VALUE='<%= ( request.getParameter("txtTableName") == null ) ? "world.city" : request.getParameter("txtTableName") %>' style="font-size:10pt;color:white;background-color:green;border:2px solid #336600;padding:3px"></TD>
