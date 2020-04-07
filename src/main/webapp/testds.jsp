@@ -48,9 +48,10 @@
 			if ((table != null) && (!table.equals(""))) {
 				try {
 					ctx = new InitialContext();
-					//tomcat
-					ctx = (Context) ctx.lookup("java:comp/env");
-
+					if("tomcat".equals(System.getProperty("scouter.objtype"))){
+					    //tomcat
+					    ctx = (Context) ctx.lookup("java:comp/env");
+					}
 					DataSource ds = (DataSource) ctx.lookup(datasource);
 					System.out.println("Looking up the " + datasource + " data source.");
 					Connection connection = ds.getConnection();
