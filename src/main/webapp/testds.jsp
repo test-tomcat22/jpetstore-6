@@ -49,7 +49,7 @@
 				try {
 					ctx = new InitialContext();
 					//tomcat
-					//ctx = (Context) ctx.lookup("java:comp/env");
+					ctx = (Context) ctx.lookup("java:comp/env");
 
 					DataSource ds = (DataSource) ctx.lookup(datasource);
 					System.out.println("Looking up the " + datasource + " data source.");
