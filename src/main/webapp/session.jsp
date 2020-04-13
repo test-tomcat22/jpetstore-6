@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
-<%@page import="java.util.*,java.text.*"%>
+<%@page import="java.util.*,java.text.*, java.net.*"%>
 <html>
   <head><title>Session Tracking Test</title>
 </head>
@@ -35,6 +35,19 @@
         long lastAccessedTime = session.getLastAccessedTime();
         int maxInactiveInterval = session.getMaxInactiveInterval();
         java.util.Enumeration e = session.getAttributeNames();
+	
+	String hostname, serverAddress;
+	hostname = "";
+        serverAddress = "";
+	 try {
+		InetAddress inetAddress;
+		inetAddress = InetAddress.getLocalHost();
+		hostname = inetAddress.getHostName();
+		serverAddress = inetAddress.toString();
+	 } catch (UnknownHostException uhe) {
+		uhe.printStackTrace();
+		out.print(uhe.getMessage());
+	 }	
 
 %>
         <table border=1 bordercolor="gray" cellspacing=1 cellpadding=0 width="100%">
@@ -42,6 +55,12 @@
                 <tr>
                         <td width="25%">Agent</td><td width="75%"><%=browser%></td>
                 </tr>
+                <tr>
+                        <td width="25%">InetAddress</td><td width="75%"><%=serverAddress%></td>
+                </tr>
+                <tr>
+                        <td width="25%">HostName</td><td width="75%"><%=hostname%></td>
+                </tr>						
                 <tr>
                         <td width="25%">Session ID</td><td width="75%"><%=sessionId%></td>
                 </tr>
