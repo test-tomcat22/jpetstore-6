@@ -19,10 +19,11 @@
     ctx = new InitialContext();
     //ds = (DataSource) ctx.lookup("dataSource");
 	//ds = (DataSource) ctx.lookup("java:comp/env/dataSource");
-	ds = (DataSource) ctx.lookup("java:/dataSource");
+	//ds = (DataSource) ctx.lookup("java:/dataSource");
 	//tomcat
-    //ctx = (Context) ctx.lookup("java:comp/env");
+    ctx = (Context) ctx.lookup("java:comp/env");
     //ds = (DataSource) ctx.lookup("dataSource");
+    ds = (DataSource) ctx.lookup("jdbc/MyDB");
 	
     con = ds.getConnection();
     DatabaseMetaData meta = con.getMetaData();
